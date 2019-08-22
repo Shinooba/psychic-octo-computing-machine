@@ -23,17 +23,18 @@ class ISFETSweepReader:
         return self.data
 
     def filter_data(self):
-        print(self.data)
+      #  print(self.data)
         filtered_data = self.data.rolling(window=500).mean()
-        print(filtered_data)
-        filtered_data = filtered_data[(filtered_data[['V_out Ave. (V)']] >= 1.6).all(axis=1)]
-        filtered_data = filtered_data[(filtered_data[['V_out Ave. (V)']] <= 1.9).all(axis=1)]
-        print(filtered_data)
+      #OLD METHOD FOR CUTTING DATA BETWEEN VALUES
+       # filtered_data = filtered_data[(filtered_data[['V_out Ave. (V)']] >= 1.6).all(axis=1)]
+       # filtered_data = filtered_data[(filtered_data[['V_out Ave. (V)']] <= 1.9).all(axis=1)]
+       # print(filtered_data)
        # for index in filtered_data
             #find difference between rows
         return filtered_data
 
     def print_sweep(self):
         print(self.data)
+
 
 
